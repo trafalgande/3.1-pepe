@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Pomogite</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputScript library="js" name="script.js" target="body"/>
+</h:head>
+<h:body>
+    <div class="header-index">
+        <div class="overlay-index">
+            <h3>
+                Чайка Алексей, гр. P3214
+                Вариант: 345334
+            </h3>
+
+                <div id="clock" class="clock"> </div>
+            <h3>
+                <a class="ui-linkbutton" href="main.xhtml">GO TO MAIN PART</a>
+            </h3>
+        </div>
+            <script type="text/javascript">
+                function showTime() {
+                    let date = new Date();
+                    let h = date.getHours(); // 0 - 23
+                    let m = date.getMinutes(); // 0 - 59
+                    let s = date.getSeconds(); // 0 - 59
+                    let session = "AM";
+
+                    if (h === 0) {
+                        h = 12;
+                    }
+
+                    if (h > 12) {
+                        h = h - 12;
+                        session = "PM";
+                    }
+
+                    h = (h &lt; 10) ? "0" + h : h;
+                    m = (m &lt; 10) ? "0" + m : m;
+                    s = (s &lt; 10) ? "0" + s : s;
+
+                    let time = h + ":" + m + ":" + s + " " + session;
+                    document.getElementById("clock").innerText = time;
+                    document.getElementById("clock").textContent = time;
+
+                    setTimeout(showTime, 1000);
+                }
+
+                showTime();
+            </script>
+        </div>
+    <div>
+
+    </div>
+
+
+</h:body>
+</html>

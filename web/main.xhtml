@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ace="http://www.icefaces.org/icefaces/components"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Pomogite</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputScript library="js" name="script.js" target="body"/>
+</h:head>
+<h:body onload="plot()">
+    <div class="header">
+        <div class="overlay">
+            <h3>
+                Чайка Алексей, гр. P3214
+                Вариант: 345334
+            </h3>
+        </div>
+    </div>
+    <div class="left">
+
+        <h:form id="mainForm">
+            <h:panelGrid columns="2" cellpadding="10" style="margin-bottom: 10px; ">
+                <p:outputLabel for="@next" value="X value:"/>
+                <p:selectOneMenu id="xValue" value="#{checker.x}" required="true" placeholder="null">
+                    <f:selectItem itemLabel="-5" itemValue="-5"/>
+                    <f:selectItem itemLabel="-4" itemValue="-4"/>
+                    <f:selectItem itemLabel="-3" itemValue="-3"/>
+                    <f:selectItem itemLabel="-2" itemValue="-2"/>
+                    <f:selectItem itemLabel="-1" itemValue="-1"/>
+                    <f:selectItem itemLabel="0" itemValue="0"/>
+                    <f:selectItem itemLabel="1" itemValue="1"/>
+                    <f:selectItem itemLabel="2" itemValue="2"/>
+                    <f:selectItem itemLabel="3" itemValue="3"/>
+                    <f:ajax event="keyup" render="submit"/>
+                </p:selectOneMenu>
+
+                <p:outputLabel for="@next" value="Y value:"/>
+                <p:inputText id="yValue" value="#{checker.y}"
+                             validatorMessage="Введено некорректное значение" converterMessage="Введено не число"
+                             requiredMessage="Введите число от -5 до 3" required="true">
+                    <f:validateDoubleRange minimum="-5" maximum="3"/>
+                    <p:ajax event="keyup" update=":form:msgs"/>
+                    <f:ajax event="keyup" render="submit"/>
+                </p:inputText>
+
+
+                <p:outputLabel for="@next" value="R value:"/>
+                <h:panelGrid columns="1">
+                    <p:inputText styleClass="rValue" id="txt" value="#{checker.r}"
+                                 validatorMessage="Введено некорректное значение"
+                                 requiredMessage="Введите число от 1 до 4"
+                                 required="true">
+                        <f:validateDoubleRange minimum="1" maximum="4"/>
+                        <p:ajax event="keyup" update=":form:msgs"/>
+                        <f:ajax event="keyup" render="submit"/>
+                    </p:inputText>
+                    <p:slider id="slide" for="txt" step="0.05" minValue="1" maxValue="4" required="true"
+                              onSlideEnd="plotW($('.rValue').val());">
+                        <p:ajax event="slideEnd" execute="@this"/>
+                    </p:slider>
+                </h:panelGrid>
+
+                <p:commandButton id="submit" value="Submit" action="#{checker.newPoint}" update=":form:pointsTab">
+                    <f:ajax execute="@form" render=":form:pointsTab"/>
+                </p:commandButton>
+            </h:panelGrid>
+        </h:form>
+    </div>
+    <div class="right">
+        <h:form id="canvas-form">
+            <canvas id="canvas" width="230px" height="230px" style="border:1px solid #d3d3d3;"
+                    onclick="setPoint(event); applyHiddenValues(event);  canvasBehave();" onmousemove="showCoords(event)" onmouseleave="eraseCoords()">
+                <f:ajax event="click" render="xCnv yCnv"/>
+                <h:inputText id="xCnv" styleClass="xCnv" value="#{checker.xCnv}" style="display: none;"/>
+                <h:inputText id="yCnv" styleClass="yCnv" value="#{checker.yCnv}" style="display: none;"/>
+                <h:inputText id="rCnv" styleClass="rCnv" value="#{checker.rCnv}" style="display: none;"/>
+            </canvas>
+            <p:remoteCommand name="canvasBehave" action="#{checker.newPointCanvasBased}" update=":form:pointsTab"/>
+        </h:form>
+        <p id="check"/>
+        <p id="err"/>
+    </div>
+
+
+    <div class="center">
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true"/>
+
+            <h:panelGroup>
+                <p:dataTable id="pointsTab" value="#{checker.getPoints()}" var="point" stickyHeader="true"
+                             editable="true" editMode="cell" widgetVar="pointsTab">
+
+                    <p:ajax event="cellEdit" listener="#{checker.onCellEdit}" update=":form:msgs :form:pointsTab"/>
+
+                    <p:column headerText="ID" sortBy="${point.id}">
+                        <h:outputText value="${point.id}"/>
+                    </p:column>
+
+                    <p:column headerText="X" sortBy="${point.x}">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="${point.x}"/></f:facet>
+                            <f:facet name="input">
+                                <h:selectOneMenu value="${point.x}" style="width: 100%" label="X value">
+                                    <f:selectItem itemLabel="-5" itemValue="-5"/>
+                                    <f:selectItem itemLabel="-4" itemValue="-4"/>
+                                    <f:selectItem itemLabel="-3" itemValue="-3"/>
+                                    <f:selectItem itemLabel="-2" itemValue="-2"/>
+                                    <f:selectItem itemLabel="-1" itemValue="-1"/>
+                                    <f:selectItem itemLabel="0" itemValue="0"/>
+                                    <f:selectItem itemLabel="1" itemValue="1"/>
+                                    <f:selectItem itemLabel="2" itemValue="2"/>
+                                    <f:selectItem itemLabel="3" itemValue="3"/>
+                                </h:selectOneMenu>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+                    <p:column headerText="Y" sortBy="${point.y}">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="${point.y}"/></f:facet>
+
+                            <f:facet name="input">
+                                <h:inputText value="${point.y}" style="width: 100%" label="Y value"
+                                             validatorMessage="Введено некорректное значение">
+                                    <f:validateDoubleRange minimum="-5" maximum="3"/>
+                                </h:inputText>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+                    <p:column headerText="R" sortBy="${point.r}">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="${point.r}"/></f:facet>
+
+                            <f:facet name="input">
+                                <h:inputText value="${point.r}" style="width: 100%" label="R value"
+                                             validatorMessage="Введено некорректное значение">
+                                    <f:validateDoubleRange minimum="1" maximum="4"/>
+                                </h:inputText>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+                    <p:column headerText="RESULT" sortBy="${point.check}">
+                        <h:outputText value="${point.check}"/>
+                    </p:column>
+
+                </p:dataTable>
+            </h:panelGroup>
+
+            <p:contextMenu for="pointsTab" widgetVar="cMenu">
+                <p:menuitem value="Edit cell" icon="pi pi-search"
+                            onclick="PF('pointsTab').showCellEditor();return false;"/>
+                <p:menuitem value="Hide menu" icon="pi pi-times" onclick="PF('cMenu').hide();"/>
+            </p:contextMenu>
+        </h:form>
+    </div>
+</h:body>
+</html>
