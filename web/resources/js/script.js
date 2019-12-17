@@ -255,6 +255,14 @@ function drawDotOutside(x, y, r) {
     ctx.fill();
 }
 
+function drawData(x, y, r) {
+    if (
+        (x >= -r && x <= 0 && y >= -r / 2 && y <= 0) ||
+        (x >= 0 && y <= 0 && (x * x + y * y) <= (r / 2 * r / 2)) ||
+        (x <= 0 && y >= 0 && y <= x / 2 + r / 2)
+    ) drawDotInside(x, y, r);
+    else drawDotOutside(x, y, r);
+}
 
 
 

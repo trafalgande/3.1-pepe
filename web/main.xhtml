@@ -10,9 +10,10 @@
 <h:head>
     <title>Pomogite</title>
     <h:outputStylesheet library="css" name="style.css"/>
-    <h:outputScript library="js" name="script.js" target="body"/>
+    <h:outputScript library="js" name="script.js"/>
 </h:head>
-<h:body onload="plot()">
+<h:body>
+
     <div class="header">
         <div class="overlay">
             <h3>
@@ -21,6 +22,7 @@
             </h3>
         </div>
     </div>
+
     <div class="left">
 
         <h:form id="mainForm">
@@ -58,10 +60,18 @@
                         <f:validateDoubleRange minimum="1" maximum="4"/>
                         <p:ajax event="keyup" update=":form:msgs"/>
                         <f:ajax event="keyup" render="submit"/>
+
                     </p:inputText>
                     <p:slider id="slide" for="txt" step="0.05" minValue="1" maxValue="4" required="true"
                               onSlideEnd="plotW($('.rValue').val());">
                         <p:ajax event="slideEnd" execute="@this"/>
+                        <p:ajax event="slideEnd" oncomplete="
+        for (let i = 0; #{checker.getPointsAsJson()}.length > i; i++) {
+            let p = #{checker.getPointsAsJson()}[i];
+            drawData(p.x, p.y, parseFloat($('.rValue').val()));
+            }
+" />
+
                     </p:slider>
                 </h:panelGrid>
 
@@ -69,12 +79,14 @@
                     <f:ajax execute="@form" render=":form:pointsTab"/>
                 </p:commandButton>
             </h:panelGrid>
+
         </h:form>
     </div>
     <div class="right">
         <h:form id="canvas-form">
             <canvas id="canvas" width="230px" height="230px" style="border:1px solid #d3d3d3;"
-                    onclick="setPoint(event); applyHiddenValues(event);  canvasBehave();" onmousemove="showCoords(event)" onmouseleave="eraseCoords()">
+                    onclick="setPoint(event); applyHiddenValues(event);  canvasBehave();"
+                    onmousemove="showCoords(event)" onmouseleave="eraseCoords()">
                 <f:ajax event="click" render="xCnv yCnv"/>
                 <h:inputText id="xCnv" styleClass="xCnv" value="#{checker.xCnv}" style="display: none;"/>
                 <h:inputText id="yCnv" styleClass="yCnv" value="#{checker.yCnv}" style="display: none;"/>
@@ -159,6 +171,20 @@
                 <p:menuitem value="Hide menu" icon="pi pi-times" onclick="PF('cMenu').hide();"/>
             </p:contextMenu>
         </h:form>
+
     </div>
+    <h:outputScript>
+        plot();
+    </h:outputScript>
+    <!-- <ui:repeat value="#{checker.points}" var="point" id="repeater">
+         <h:outputScript>
+             $('#mainForm:slide').on('slideEnd', function() {
+
+             })
+
+
+         </h:outputScript>
+     </ui:repeat>
+ -->
 </h:body>
 </html>

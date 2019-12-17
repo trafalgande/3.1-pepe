@@ -1,5 +1,6 @@
 package bean;
 
+import com.google.gson.Gson;
 import model.Point;
 import oracle.sql.NUMBER;
 import org.hibernate.Session;
@@ -76,7 +77,7 @@ public class AreaChecker implements Serializable {
     private boolean check(double x, double y, double r) {
         check = (x >= -r && x <= 0 && y >= -r / 2 && y <= 0) ||
                 (x >= 0 && y <= 0 && (x * x + y * y) <= (r / 2 * r / 2)) ||
-                (x <= 0 && y >= 0 && y <= x / 2 + r);
+                (x <= 0 && y >= 0 && y <= x / 2 + r / 2);
         return check;
     }
 
@@ -176,6 +177,10 @@ public class AreaChecker implements Serializable {
 
     public void setrCnv(double rCnv) {
         this.rCnv = rCnv;
+    }
+
+    public String getPointsAsJson() {
+        return new Gson().toJson(points);
     }
 }
 
