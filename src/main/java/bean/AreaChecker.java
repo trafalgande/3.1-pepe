@@ -22,13 +22,13 @@ import java.util.List;
 @ApplicationScoped
 public class AreaChecker implements Serializable {
     private List<Point> points;
-    private double x;
-    private double y;
-    private double r;
+    private Double x;
+    private Double y;
+    private Double r;
 
-    private double xCnv;
-    private double yCnv;
-    private double rCnv;
+    private Double xCnv;
+    private Double yCnv;
+    private Double rCnv;
 
 
 
@@ -36,32 +36,34 @@ public class AreaChecker implements Serializable {
     private EntityManager em = Persistence.createEntityManagerFactory("hibernate").createEntityManager();
 
     public AreaChecker() {
+        r = 1.0;
+        x = (double) -5;
         Query query = em.createQuery("select p from Point p");
         points = query.getResultList();
     }
 
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(Double x) {
         this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(Double y) {
         this.y = y;
     }
 
-    public double getR() {
+    public Double getR() {
         return r;
     }
 
-    public void setR(double r) {
+    public void setR(Double r) {
         this.r = r;
     }
 
@@ -74,7 +76,7 @@ public class AreaChecker implements Serializable {
     }
 
 
-    private boolean check(double x, double y, double r) {
+    private boolean check(Double x, Double y, Double r) {
         check = (x >= -r && x <= 0 && y >= -r / 2 && y <= 0) ||
                 (x >= 0 && y <= 0 && (x * x + y * y) <= (r / 2 * r / 2)) ||
                 (x <= 0 && y >= 0 && y <= x / 2 + r / 2);
@@ -125,21 +127,21 @@ public class AreaChecker implements Serializable {
         String query;
         switch (colHeader) {
             case "R": {
-                double xEnt = entity.getX();
-                double yEnt = entity.getY();
+                Double xEnt = entity.getX();
+                Double yEnt = entity.getY();
                 entity.setCheck(check(xEnt, yEnt, (Double) newValue));
 
                 break;
             }
             case "X": {
-                double yEnt = entity.getY();
-                double rEnt = entity.getR();
+                Double yEnt = entity.getY();
+                Double rEnt = entity.getR();
                 entity.setCheck(check((Double) newValue, yEnt, rEnt));
                 break;
             }
             case "Y": {
-                double xEnt = entity.getX();
-                double rEnt = entity.getR();
+                Double xEnt = entity.getX();
+                Double rEnt = entity.getR();
                 entity.setCheck(check(xEnt, (Double) newValue, rEnt));
                 break;
             }
@@ -155,32 +157,38 @@ public class AreaChecker implements Serializable {
         em.getTransaction().commit();
     }
 
-    public double getxCnv() {
+    public Double getxCnv() {
         return xCnv;
     }
 
-    public void setxCnv(double xCnv) {
+    public void setxCnv(Double xCnv) {
         this.xCnv = xCnv;
     }
 
-    public double getyCnv() {
+    public Double getyCnv() {
         return yCnv;
     }
 
-    public void setyCnv(double yCnv) {
+    public void setyCnv(Double yCnv) {
         this.yCnv = yCnv;
     }
 
-    public double getrCnv() {
+    public Double getrCnv() {
         return rCnv;
     }
 
-    public void setrCnv(double rCnv) {
+    public void setrCnv(Double rCnv) {
         this.rCnv = rCnv;
     }
 
     public String getPointsAsJson() {
         return new Gson().toJson(points);
+    }
+
+
+
+    public boolean commandButtonBehavior(){
+        return y==null;
     }
 }
 

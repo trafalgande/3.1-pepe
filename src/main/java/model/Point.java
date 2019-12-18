@@ -1,5 +1,6 @@
 package model;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.*;
 
 @Entity
@@ -10,18 +11,18 @@ public class Point {
     @Column(name = "ID", nullable = false)
     private Integer id;
     @Column(name = "X", nullable = false)
-    private double x;
+    private Double x;
     @Column(name = "Y", nullable = false)
-    private double y;
+    private Double y;
     @Column(name = "R", nullable = false)
-    private double r;
+    private Double r;
     @Column(name = "RES", nullable = false)
     private Boolean check;
 
     public Point() {
     }
 
-    public Point(double x, double y, double r, Boolean check) {
+    public Point(Double x, Double y, Double r, Boolean check) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -29,27 +30,27 @@ public class Point {
     }
 
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(Double x) {
         this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(Double y) {
         this.y = y;
     }
 
-    public double getR() {
+    public Double getR() {
         return r;
     }
 
-    public void setR(double r) {
+    public void setR(Double r) {
         this.r = r;
     }
 
