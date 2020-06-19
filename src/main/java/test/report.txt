@@ -1,0 +1,246 @@
+Testsuite: test.AreaCheckerTest
+Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.072 sec
+
+Testcase: checkWithPoint_RisNan_False took 0.004 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_RisNan_False(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+Caused by: java.lang.ClassNotFoundException: javax.persistence.Persistence
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+
+Testcase: checkWithPoint_AllZero_True took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_AllZero_True(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_checkBorderHitWhenXandYLessThanR_falseForArea1ElseTrue took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_checkBorderHitWhenXandYLessThanR_falseForArea1ElseTrue(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_YisNull_NullPointerException took 0 sec
+	Caused an ERROR
+Unexpected exception, expected<java.lang.NullPointerException> but was<java.lang.NoClassDefFoundError>
+java.lang.Exception: Unexpected exception, expected<java.lang.NullPointerException> but was<java.lang.NoClassDefFoundError>
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+Caused by: java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_YisNull_NullPointerException(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+Testcase: checkWithPoint_XorYisInfinity_False took 0.001 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_XorYisInfinity_False(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_RisInfinity_IfIn1AreaFalseElseTrue took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_RisInfinity_IfIn1AreaFalseElseTrue(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_XisNull_NullPointerException took 0 sec
+	Caused an ERROR
+Unexpected exception, expected<java.lang.NullPointerException> but was<java.lang.NoClassDefFoundError>
+java.lang.Exception: Unexpected exception, expected<java.lang.NullPointerException> but was<java.lang.NoClassDefFoundError>
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+Caused by: java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_XisNull_NullPointerException(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+Testcase: checkWithPoint_checkHitWhenXandYMoreThanR_falseForAll took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_checkHitWhenXandYMoreThanR_falseForAll(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_RisNegative_False took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_RisNegative_False(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_RisNull_NullPointerException took 0 sec
+	Caused an ERROR
+Unexpected exception, expected<java.lang.NullPointerException> but was<java.lang.NoClassDefFoundError>
+java.lang.Exception: Unexpected exception, expected<java.lang.NullPointerException> but was<java.lang.NoClassDefFoundError>
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+Caused by: java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_RisNull_NullPointerException(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+Testcase: checkWithPoint_checkHitWhenXandYLessThanR_trueForAllExcept1Area took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_checkHitWhenXandYLessThanR_trueForAllExcept1Area(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_checkBorderHitWhenXandYMoreThanR_falseForArea1ElseTrue took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_checkBorderHitWhenXandYMoreThanR_falseForArea1ElseTrue(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_XorYisNan_False took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_XorYisNan_False(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+
+Testcase: checkWithPoint_RisZero_False took 0 sec
+	Caused an ERROR
+javax/persistence/Persistence
+java.lang.NoClassDefFoundError: javax/persistence/Persistence
+	at bean.AreaChecker.<init>(Unknown Source)
+	at test.AreaCheckerTest.checkWithPoint_RisZero_False(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at com.intellij.rt.ant.execution.AntMain2.main(AntMain2.java:31)
+

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<project name="ant-demo" basedir="." >
+    <property file="build.properties"/>
+
+
+    <!--  COMPILE  -->
+    <target name="compile" >
+        <mkdir dir="${classes_dir}"/>
+        <javac source="${java_ver}" target="${java_ver}" includeantruntime="false" destdir="${classes_dir}">
+            <src path="${src_dir}"/>
+            <compilerarg value="${args}"/>
+            <classpath>
+                <fileset dir="${lib_dir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+
+    </target>
+
+
+    <target name="build" depends="compile">
+        <mkdir dir="${out_dir}"/>
+
+    </target>
+
+    <!--CLEANING-->
+    <target name="clean">
+        <delete dir="${build_dir}"/>
+        <delete dir="${test_dir}"/>
+    </target>
+
+    <!--TESTING-->
+    <target name="test" depends="build">
+        <junit haltonfailure="no" printsummary="yes">
+            <classpath location="${classes_dir}"/>
+            <classpath location="${lib_dir}/junit-4.12.jar"/>
+            <classpath location="${lib_dir}/hamcrest-core-1.3.jar"/>
+            <test name="test.AreaCheckerTest" outfile="report" todir="${test_dir}">
+                <formatter type="plain"/>
+                <formatter type="xml"/>
+            </test>
+        </junit>
+    </target>
+
+</project>

@@ -14,13 +14,12 @@ public class HibernateSessionFactoryUtil {
         try {
             Configuration configuration = new Configuration();
 
-            //Create Properties, can be read from property files too
             Properties props = new Properties();
             props.put("persistenceUnitName", "hibernate");
-            props.put("hibernate.connection.url", "jdbc:oracle:thin:@//localhost:1521/orbis");
+            props.put("hibernate.connection.url", "jdbc:oracle:thin:@//localhost:1521/xe");
             props.put("hibernate.connection.driver_class", "oracle.jdbc.driver.OracleDriver");
-            props.put("hibernate.connection.username", "s263068");
-            props.put("hibernate.connection.password", "zet761");
+            props.put("hibernate.connection.username", "SYSTEM");
+            props.put("hibernate.connection.password", "oraclepassword");
             props.put("hibernate.archive.autodetection", "class");
             props.put("hibernate.show_sql", "true");
             props.put("hibernate.format_sql", "true");

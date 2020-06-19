@@ -1,0 +1,3 @@
+bean\AreaChecker.class
+model\Point.class
+utils\HibernateSessionFactoryUtil.class

@@ -1,0 +1,6 @@
+Signature-Version: 2.0
+
+Name: audio/ocean.au
+SectionName: Ocean Sounds Audio File
+Digest_Algorithms: MD5
+MD5-Digest: base64(MD5 Digest of manifest section entitled "Ocean Sounds")

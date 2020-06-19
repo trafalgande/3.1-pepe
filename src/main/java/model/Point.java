@@ -1,6 +1,5 @@
 package model;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.*;
 
 @Entity
@@ -29,6 +28,12 @@ public class Point {
         this.check = check;
     }
 
+    public Point(Double x, Double y, Double r) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.check = null;
+    }
 
     public Double getX() {
         return x;

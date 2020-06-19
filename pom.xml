@@ -20,8 +20,8 @@
                     </configuration>
                 </plugin>
             </plugins>
-
         </build>
+
         <!-- PrimeFaces Repository -->
         <repositories>
             <repository>
@@ -32,14 +32,11 @@
             </repository>
         </repositories>
         <dependencies>
-           <!-- &lt;!&ndash; ICE FACES &ndash;&gt;
             <dependency>
-                <groupId>org.icefaces</groupId>
-                <artifactId>icefaces-ace</artifactId>
-                <version> 4.1.0</version>
-            </dependency>-->
-
-
+                <groupId>com.oracle.database.jdbc</groupId>
+                <artifactId>ojdbc10</artifactId>
+                <version>19.6.0.0</version>
+            </dependency>
 
             <!-- PRIME FACES -->
             <dependency>

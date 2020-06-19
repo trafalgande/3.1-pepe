@@ -9,10 +9,10 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>model.Point</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:orbis"/>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
             <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
-            <property name="hibernate.connection.username" value="s263068"/>
-            <property name="hibernate.connection.password" value="zet761"/>
+            <property name="hibernate.connection.username" value="SYSTEM"/>
+            <property name="hibernate.connection.password" value="oraclepassword"/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>

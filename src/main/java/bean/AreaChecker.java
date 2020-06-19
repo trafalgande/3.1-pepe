@@ -30,10 +30,8 @@ public class AreaChecker implements Serializable {
     private Double yCnv;
     private Double rCnv;
 
-
-
     private Boolean check;
-    private EntityManager em = Persistence.createEntityManagerFactory("hibernate").createEntityManager();
+    private final EntityManager em = Persistence.createEntityManagerFactory("hibernate").createEntityManager();
 
     public AreaChecker() {
         r = 1.0;
@@ -81,6 +79,12 @@ public class AreaChecker implements Serializable {
                 (x >= 0 && y <= 0 && (x * x + y * y) <= (r / 2 * r / 2)) ||
                 (x <= 0 && y >= 0 && y <= x / 2 + r / 2);
         return check;
+    }
+
+    public boolean check(Point p) {
+        return (p.getX() >= -p.getR() && p.getX() <= 0 && p.getY() >= -p.getR() / 2 && p.getY() <= 0) ||
+                (p.getX() >= 0 && p.getY() <= 0 && (p.getX() * p.getX() + p.getY() * p.getY()) <= (p.getR() / 2 * p.getR() / 2)) ||
+                (p.getX() <= 0 && p.getY() >= 0 && p.getY() <= p.getX() / 2 + p.getR() / 2);
     }
 
     public void newPoint() {
